@@ -105,18 +105,19 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
+  let result
   // Solution code here...
-  let result 
-      Object.values(arr).forEach(element=>{     
-       if(element.length===character){
-         if(val.result.length>0){
-           children =true
-         } else {
-           result = false
-         }
-
-         return result
-        }       
+  Object.values(arr).forEach(element=>{
+    if(element.name===character)
+    if(element.children.length>0){
+      result = true
+    } else{
+      
+      result = false
+    }   
+  }) 
+  return  result 
+}    
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -128,18 +129,17 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
-  let result 
-  Object.entries(arr).forEach(element=>{     
-   if(element.length===character){
-     if(val.result.length>0){
-       children =true
-     } else {
-       result = false
-     }
-
-     return result
-    } 
-
+  Object.entries(arr).forEach(element=>{
+    if(element[1].name===character)
+    if(element[1].children.length>0){
+      result = true
+    } else{
+      
+      result = false
+    }   
+  }) 
+  return  result 
+}    
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 
