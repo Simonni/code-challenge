@@ -69,11 +69,11 @@ let characters = [
   }
 ]
 
-const totalCharacters = (arr) => {
+const totalCharacters = (arr => {
   // Solution code here...
   let char = Object.keys(characters)
   return char.house
-}
+})
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -129,6 +129,7 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let result 
   Object.entries(arr).forEach(element=>{
     if(element[1].name===character)
     if(element[1].children.length>0){
@@ -210,7 +211,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe.only('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
@@ -220,7 +221,7 @@ describe.only('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+describe.only('Testing challenge 5', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
