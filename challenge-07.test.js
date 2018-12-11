@@ -192,12 +192,15 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
-  let abilityName= []
-  snorlaxStats.stats.map(num=>{
-    abilityName.push('Name: '+ num.stat.name , 'total: '+ (num.effort + num.baseStat))
+  let abilityName= arr.map(obj=>{
+    let statNameTotal={}
+    statNameTotal['total']=(obj.effort + obj.baseStat)
+    statNameTotal['name']=obj.stat.name  
+    return statNameTotal
   })
   return abilityName
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
