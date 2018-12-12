@@ -10,10 +10,9 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
-str= str + 'The end.'
-return str;  
+  str= str + ' The end.'
+  return str;
 }
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -30,7 +29,7 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
-  const arr = arr.push(arr[0])
+  arr = arr.push(arr[0])
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +70,7 @@ const setStatusAsAuthor = (people) => {
   for(let i=0;i<people.length;i++){
     people[i].isAuthor=true
   }
- }
+}
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,7 +93,7 @@ const append = (arr1, arr2) => {
   for(let i=0;i<arr2.length;i++){
     arr1.push(arr2[i])
   }
- }
+}
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -107,7 +106,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe.only('Testing challenge 1', () => {
+describe('Testing challenge 1', () => {
   test('It should append without modifying the oiginal', () => {
     const a = 'This is my story.';
     const b = appendTheEnd(a);
