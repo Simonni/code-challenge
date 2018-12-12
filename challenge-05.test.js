@@ -14,11 +14,13 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
   // Solution code here...
-  
- 
-};
+  let output = []
+  for(let i=0; i<=str.length; i++){
+    output.push(str.slice(i))
+  }
+  return output
+}; 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -79,6 +81,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let files=['G','oa','b','f','p','ch','b','b','c','m','f']
+  for(let i=0;i<recipe.ingredients.length;i++){
+    let index=recipe.ingredients[i].indexOf(files[i])
+    result.push(recipe.ingredients[i].slice(index,recipe.ingredients[i].length))
+  }
   return result;
 }
 
@@ -93,8 +100,14 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  let files=['G','oa','b','f','p','ch','b','b','c','m','f']
+  for(let i=0;i<recipe.ingredients.length;i++){
+    let index=recipe.ingredients[i].indexOf(files[i])
+    result.push(recipe.ingredients[i].slice(index,recipe.ingredients[i].length))
+  }
   return result;
 }
+  
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -109,8 +122,15 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  let split_array=[]
+  // Solution code here...
+  for(let i=0;i<recipe.steps.length;i++){
+    split_array=recipe.steps[i].split(" ")
+    result.push(split_array[0]) 
+  }
   return result;
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -127,6 +147,12 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  for(let i=arr.length; i>=0; i--){
+    if(arr[i]%2===0){
+      arr.splice(i,1)
+    }
+  }
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,6 +172,13 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
+  if(numberOfCharacters>str.length){
+    return str = ''
+  } else if(numberOfCharacters<0){
+    return str
+  } else {
+    return str.slice(0,str.length-numberOfCharacters)
+  } 
 };
 
 
@@ -208,7 +241,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-describe.only('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return an array of individual letters', () => {
     expect(wordsToCharList('Gregor')).toStrictEqual(['G', 'r', 'e', 'g', 'o', 'r']);
     expect(wordsToCharList('Gregor').length).toStrictEqual(6);
