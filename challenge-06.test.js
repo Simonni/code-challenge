@@ -133,11 +133,11 @@ const hasChildrenEntries = (arr, character) => {
   Object.entries(arr).forEach(element=>{
     if(element[1].name===character)
       if(element[1].children.length>0){
-    result = true
-    } else{
+        result = true
+      } else{
       
-      result = false
-    }   
+        result = false
+      }   
   }) 
   return  result 
 }    
