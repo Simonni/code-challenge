@@ -71,8 +71,8 @@ let characters = [
 
 const totalCharacters = (arr => {
   // Solution code here...
-  let char = Object.keys(characters)
-  return char.house
+  let char = Object.keys(arr)
+  return char.length
 })
 
 /*------------------------------------------------------------------------------------------------
@@ -86,10 +86,10 @@ const getHouses = (arr) => {
   
   // Solution code here...
   Object.values(arr).forEach(property=>{
-  houses.push(property.house)
+    houses.push(property.house)
  
- }) 
- return houses
+  }) 
+  return houses
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,18 +105,18 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  let result
+  let result 
   // Solution code here...
   Object.values(arr).forEach(element=>{
     if(element.name===character)
-    if(element.children.length>0){
-      result = true
-    } else{
+      if(element.children.length>0){
+        result = true
+      } else{
       
-      result = false
-    }   
+        result = false
+      }   
   }) 
-  return  result 
+  return result 
 }    
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,8 +132,8 @@ const hasChildrenEntries = (arr, character) => {
   let result 
   Object.entries(arr).forEach(element=>{
     if(element[1].name===character)
-    if(element[1].children.length>0){
-      result = true
+      if(element[1].children.length>0){
+    result = true
     } else{
       
       result = false
@@ -221,7 +221,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe.only('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
