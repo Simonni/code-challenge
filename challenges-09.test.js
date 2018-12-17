@@ -152,12 +152,16 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
-  let result=arr.reduce((acc,val,inx)=>{
-  acc[arr.children]= val.children
-  return acc
-  }, )
-  return result
+  let count = 0
+  arr.reduce((acc,val,inx)=>{
+    if(val.hasOwnProperty('children')){
+      acc= val.children.length
+      count +=acc
+    }
+  }, 0)
+  return count
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -196,10 +200,11 @@ const isPrime = (value) => {
 const countPrimeNumbers = (arr) => {
   // Solution code here...
   let primeNum= arr.reduce((acc,num,inx)=>{
-    if(isPrime(num))
-    acc=num
+    if(isPrime(num)){
+      acc++ 
+    } 
     return acc
-  }, 2)
+  }, 0)
   return primeNum
 }
 
@@ -301,7 +306,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe.only('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
