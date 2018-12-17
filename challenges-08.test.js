@@ -94,12 +94,10 @@ const snorlaxData = {
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
   let result=[]
-  let statName ={}
   snorlaxData.stats.filter(num=>{
     if(num.baseStat>minBaseStat){
-      statName['baseStat']=num.baseStat-minBaseStat
-      return result.push(statName)
-    }
+      result.push(num)
+    }  
   })
   return result
 };
@@ -260,7 +258,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
+describe.only('Testing challenge 5', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
